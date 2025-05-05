@@ -28,7 +28,7 @@ In practice:
 
 Local image from GitHub repo:
 
-![Noise map](/noise_map.png)
+![Noise map](/noise-map.png)
 
 ## Data sources and AI methods
 
