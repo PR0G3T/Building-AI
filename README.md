@@ -24,7 +24,7 @@ In practice:
 3. View real-time classification and noise level.  
 4. Explore the web dashboard to see aggregated data and trends.  
 
-![App screenshot](https://example.com/app_screenshot.png)
+![App screenshot](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*YO78LKnoSBN13qdpK84Uww.png)
 
 Local image from GitHub repo:
 
