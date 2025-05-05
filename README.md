@@ -1,87 +1,60 @@
-<!-- This is the markdown template for the final project of the Building AI course, 
-created by Reaktor Innovations and University of Helsinki. 
-Copy the template, paste it to your GitHub README and edit! -->
-
 # Building AI
 
-Final project for the Building AI course project
+Final project for the Building AI course project: UrbanNoise
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
-
+UrbanNoise is a mobile and web platform that uses AI to classify environmental sounds (e.g., traffic, construction, concerts) in real time and map urban noise pollution, offering insights and personalized alerts to city planners and residents.
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+Noise pollution impacts public health, urban quality of life, and environmental planning. Traditional monitoring relies on expensive equipment and sparse measurement points.
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
-
+* Lack of real-time, high-resolution noise data  
+* High costs of deploying and maintaining acoustic sensors  
+* Limited citizen awareness about local noise exposure  
 
 ## How is it used?
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+Users open the UrbanNoise app on their smartphone to record audio snippets in their environment. The app extracts audio features (MFCCs) and uses a trained convolutional neural network to classify sound sources and estimate decibel levels. Data is sent to the web dashboard to update an interactive noise map.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+In practice:
+1. Open the app in any urban location.  
+2. Record a 10-second audio sample.  
+3. View real-time classification and noise level.  
+4. Explore the web dashboard to see aggregated data and trends.  
 
-Local image from Github repo :
+![App screenshot](https://example.com/app_screenshot.png)
 
-![image of a cat](/cat.png)
+Local image from GitHub repo:
 
-Online image :
-
-![image of an online cat](https://tinyurl.com/elementsofaicat)
-
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
-
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
-
-   totPop = sum(pop)
-   totFish = sum(fishers)
-
-   # write your solution here
-
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
+![Noise map](/noise_map.png)
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+We leverage the [UrbanSound8K dataset](https://urbansounddataset.weebly.com/) for initial model training and collect additional crowdsourced recordings via the mobile app. Audio samples are processed using the Librosa library.
+
+| Method                    | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| MFCC extraction           | Extract Mel-frequency cepstral coefficients from audio   |
+| Convolutional Neural Network | Classify sound sources into predefined categories      |
+| Regression layer          | Estimate sound pressure level (decibels)                |
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+UrbanNoise does not guarantee privacy-preserving recording: users must consent to audio capture. Model accuracy may degrade in extremely noisy or overlapping sound environments. Battery consumption and network connectivity can limit real-time data submission.
 
 ## What next?
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
+To scale the project, we plan to:
+1. Partner with local governments for sensor deployment.  
+2. Incorporate edge-computing models to reduce data transmission.  
+3. Expand sound categories (e.g., wildlife, construction machinery).  
 
+We will need expertise in mobile development (iOS/Android), cloud infrastructure, and urban planning domain knowledge.
 
 ## Acknowledgments
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+* [UrbanSound8K dataset by Salamon et al.](https://urbansounddataset.weebly.com/) / CC BY SA 4.0  
+* Building AI course template provided by Reaktor Innovations and University of Helsinki  
+* Icons by [Freepik](https://www.freepik.com/) under CC BY 3.0  
