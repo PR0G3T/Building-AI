@@ -22,7 +22,9 @@ In practice:
 1. Open the app in any urban location.  
 2. Record a 10-second audio sample.  
 3. View real-time classification and noise level.  
-4. Explore the web dashboard to see aggregated data and trends.  
+4. Explore the web dashboard to see aggregated data and trends.
+
+<br>
 
 ![App screenshot](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*YO78LKnoSBN13qdpK84Uww.png)
 
